@@ -15,6 +15,10 @@ const userSchema = mongoose.Schema(
       type: String,
       required: [true, "Password harus di isi!"],
     },
+    role: {
+      type: String,
+      required: [true, "Tipe harus di isi!"],
+    },
   },
   {
     versionKey: false,

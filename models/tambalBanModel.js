@@ -22,20 +22,10 @@ const tambalBanSchema = mongoose.Schema(
       type: String,
       required: [true, "Perlu longitude"],
     },
-    // quantity: {
-    //   type: Number,
-    //   required: true,
-    //   default: 0,
-    // },
-    // price: {
-    //   type: Number,
-    //   required: true,
-    //   default: 0,
-    // },
-    // image: {
-    //   type: String,
-    //   required: false,
-    // },
+    pictureUrl: {
+      type: String,
+      default: "https://i.ibb.co/Y77Cwnx/dummy.png",
+    },
   },
   {
     versionKey: false,

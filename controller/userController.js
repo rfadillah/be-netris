@@ -4,8 +4,8 @@ const jwt = require("jsonwebtoken");
 const asyncHandler = require("express-async-handler");
 
 const registerUser = asyncHandler(async (req, res) => {
-  const { fullname, email, password } = req.body;
-  if (!fullname || !email || !password) {
+  const { fullname, email, password, role } = req.body;
+  if (!fullname || !email || !password || !role) {
     res.status(400);
     throw new Error("Harap isi semua field!");
   }
@@ -20,6 +20,7 @@ const registerUser = asyncHandler(async (req, res) => {
     fullname,
     email,
     password: hashedPassword,
+    role: role,
   });
 
   if (user) {
@@ -48,7 +49,7 @@ const loginUser = asyncHandler(async (req, res) => {
         },
       },
       process.env.ACCESS_TOKEN_SECRET,
-      { expiresIn: "15m" }
+      { expiresIn: "2 days" }
     );
     res.status(200).json({ fullName: user.fullname, accessToken: accessToken });
   } else {
