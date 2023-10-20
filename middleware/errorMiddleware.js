@@ -2,6 +2,7 @@ const { constants } = require("../constants");
 const errorMiddleware = (err, req, res, next) => {
   console.log("here is an error middleware");
   const statusCode = res.statusCode ? res.statusCode : 500;
+  console.log(statusCode);
   switch (statusCode) {
     case constants.VALIDATION_ERROR:
       res.json({

@@ -32,6 +32,8 @@ app.get("/blog", function (req, res) {
   res.send("Hello blog, goblog");
 });
 
+app.use("/uploads", express.static("./uploads"));
+
 app.use(errorMiddleware);
 
 mongose

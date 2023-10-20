@@ -24,7 +24,7 @@ const tambalBanSchema = mongoose.Schema(
     },
     pictureUrl: {
       type: String,
-      default: "https://i.ibb.co/Y77Cwnx/dummy.png",
+      // default: "https://i.ibb.co/Y77Cwnx/dummy.png",
     },
   },
   {
