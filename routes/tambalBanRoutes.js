@@ -17,7 +17,7 @@ const storage = multer.diskStorage({
   filename: function (req, file, cb) {
     let filename = file.originalname;
     cb(null, filename);
-    req.body.foto = "http://localhost:3000/uploads/" + filename;
+    req.body.foto = "https://netris.my.id/uploads/" + filename;
   },
 });
 

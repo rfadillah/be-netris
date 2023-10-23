@@ -51,7 +51,13 @@ const loginUser = asyncHandler(async (req, res) => {
       process.env.ACCESS_TOKEN_SECRET,
       { expiresIn: "2 days" }
     );
-    res.status(200).json({ fullName: user.fullname, accessToken: accessToken });
+    res
+      .status(200)
+      .json({
+        fullName: user.fullname,
+        accessToken: accessToken,
+        role: user.role,
+      });
   } else {
     res.status(401);
     throw new Error("email atau password salah");
